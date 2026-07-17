@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | TheEmFrame Photography</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header" data-admin></div>
+
+<!-- ===== Password gate ===== -->
+<div class="admin-gate" id="admin-gate">
+  <div class="admin-gate-card">
+    <span class="eyebrow">Private Area</span>
+    <h2 class="mt-2 mb-3">Admin Login</h2>
+    <form id="admin-login-form">
+      <label for="admin-email" class="form-label">Email</label>
+      <input type="email" class="form-control mb-3" id="admin-email" required autofocus>
+      <label for="admin-password" class="form-label">Password</label>
+      <input type="password" class="form-control mb-3" id="admin-password" required>
+      <div class="alert alert-danger d-none" id="admin-login-error">Incorrect password. Try again.</div>
+      <button type="submit" class="btn btn-brick w-100">Unlock</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== Admin panel (hidden until unlocked) ===== -->
+<div class="d-none" id="admin-panel">
+  <section class="section-tight">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4">
+        <div>
+          <span class="eyebrow">Private Area</span>
+          <h1 class="mt-2 mb-0">Upload Photos</h1>
+        </div>
+        <button class="btn btn-outline-ink" id="admin-logout">Log Out</button>
+      </div>
+
+      <div class="admin-warning mb-4">
+        <strong>Live storage:</strong> photos uploaded here go to your Supabase project (real database + storage) and appear on the Portfolio page for every visitor, on every device.
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <form id="upload-form" class="p-4" style="background:var(--paper-dim); border-radius:2px;">
+            <h6 class="eyebrow mb-3">Add Photo(s)</h6>
+            <div class="mb-3">
+              <label for="upload-category" class="form-label">Album / Category</label>
+              <select class="form-select" id="upload-category" required></select>
+            </div>
+            <div class="mb-3">
+              <label for="upload-file" class="form-label">Image File(s)</label>
+              <input type="file" class="form-control" id="upload-file" accept="image/*" multiple required>
+            </div>
+            <div class="mb-3">
+              <label for="upload-alt" class="form-label">Description (optional)</label>
+              <input type="text" class="form-control" id="upload-alt" placeholder="e.g. Backyard birthday, golden hour">
+            </div>
+            <button type="submit" class="btn btn-brick w-100">Add to Portfolio</button>
+          </form>
+        </div>
+
+        <div class="col-lg-7">
+          <h6 class="eyebrow mb-3">Currently Uploaded</h6>
+          <div id="uploaded-thumbnails"><!-- filled by admin.js --></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/script.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | TheEmFrame Photography</title>
+<meta name="description" content="Get in touch to book a photography session or ask a question.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- EmailJS SDK (used by js/script.js to send the contact form) -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<header class="section-tight">
+  <div class="container">
+    <span class="eyebrow">Say Hello</span>
+    <h1 class="mt-2 mb-2">Contact</h1>
+    <p class="max-w-prose">Tell me about your session — date, location, and package you're interested in — and I'll follow up within 1–2 business days.</p>
+  </div>
+</header>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="row g-5">
+
+      <div class="col-lg-7 reveal">
+        <form id="contact-form" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone (optional)</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="col-md-6">
+              <label for="packageInterest" class="form-label">Package Interest</label>
+              <select class="form-select" id="packageInterest" name="packageInterest">
+                <option value="" selected>Not sure yet</option>
+                <option value="portraits">Portraits & Branding — $50</option>
+                <option value="couples">Couple — $70</option>
+                <option value="families">Families & Groups — $100</option>
+                <option value="seniors">Senior — $100</option>
+                <option value="custom">Custom / Event</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Preferred date, location, and any details that would help me plan your session."></textarea>
+              <div class="invalid-feedback">Please add a short message.</div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-brick">Send Message</button>
+            </div>
+            <div class="col-12">
+              <div id="form-status" class="alert d-none" role="alert"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-5 reveal">
+        <div class="p-4 h-100" style="background:var(--paper-dim); border-radius:2px;">
+          <h6 class="eyebrow mb-3">Studio Details</h6>
+          <p class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:emstercrandell@gmail.com">emstercrandell@gmail.com</a></p>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Based in Arizona &middot; travel available</p>
+          <p class="mb-4"><i class="bi bi-clock me-2"></i>Replies within 1–2 business days</p>
+          <hr class="hr-thin mb-3">
+          <p class="small text-muted mb-0">Prefer to talk through details first? Mention a good time to call in your message and I'll reach out.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
